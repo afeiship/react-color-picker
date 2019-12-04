@@ -29,7 +29,7 @@ npm install -S @feizheng/react-color-picker
 
   class App extends React.Component {
     state = {
-      value: '#f60'
+      value: '#ff6600'
     };
 
     onChange = (inEvent) => {
@@ -42,13 +42,13 @@ npm install -S @feizheng/react-color-picker
       return (
         <div className="app-container" style={{ background: value }}>
           <ReactColorPicker value={value} onChange={this.onChange} />
+          <div className="is-label">{value}</div>
         </div>
       );
     }
   }
 
   ReactDOM.render(<App />, document.getElementById('app'));
-
   ```
 
 ## documentation

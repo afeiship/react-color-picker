@@ -5,7 +5,7 @@ import './assets/style.scss';
 
 class App extends React.Component {
   state = {
-    value: '#f60'
+    value: '#ff6600'
   };
 
   onChange = (inEvent) => {
@@ -18,6 +18,7 @@ class App extends React.Component {
     return (
       <div className="app-container" style={{ background: value }}>
         <ReactColorPicker value={value} onChange={this.onChange} />
+        <div className="is-label">{value}</div>
       </div>
     );
   }
