@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from '@feizheng/noop';
 import objectAssign from 'object-assign';
-import hexToRgba from 'hex-to-rgba';
 import { SketchPicker, PhotoshopPicker } from 'react-color';
 
 const CLASS_NAME = 'react-color-picker';
