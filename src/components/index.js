@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import noop from '@feizheng/noop';
 import objectAssign from 'object-assign';
+import hexToRgba from 'hex-to-rgba';
 import { SketchPicker, PhotoshopPicker } from 'react-color';
 
 const CLASS_NAME = 'react-color-picker';
@@ -23,7 +24,8 @@ export default class extends Component {
   onChange = (inEvent) => {
     const { onChange } = this.props;
     const target = inEvent;
-    target.value = inEvent.hex;
+    const { r, g, b, a } = inEvent.rgb;
+    target.value = `rgba(${r}, ${g}, ${b}, ${a})`;
     onChange({ target });
   };
 
@@ -35,7 +37,6 @@ export default class extends Component {
         className={classNames(CLASS_NAME, className)}>
         <SketchPicker
           {...props}
-          disableAlpha
           color={value}
           onChangeComplete={this.onChange}
         />
