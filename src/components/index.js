@@ -33,7 +33,12 @@ export default class extends Component {
       <div
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}>
-        <SketchPicker {...props} color={value} onChange={this.onChange} />
+        <SketchPicker
+          {...props}
+          disableAlpha
+          color={value}
+          onChangeComplete={this.onChange}
+        />
       </div>
     );
   }
