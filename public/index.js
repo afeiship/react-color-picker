@@ -1,6 +1,7 @@
-import ReactColorPicker from '../src/main';
-import ReactDOM from 'react-dom';
+import ReactDemokit from '@jswork/react-demokit';
 import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactColorPicker from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
@@ -16,10 +17,13 @@ class App extends React.Component {
   render() {
     const { value } = this.state;
     return (
-      <div className="app-container" style={{ background: value }}>
+      <ReactDemokit
+        className="p-3 app-container"
+        url="https://github.com/afeiship/react-color-picker"
+        style={{ background: value }}>
         <ReactColorPicker value={value} onChange={this.onChange} />
         <div className="is-label">{value}</div>
-      </div>
+      </ReactDemokit>
     );
   }
 }

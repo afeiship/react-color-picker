@@ -2,17 +2,27 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from '@feizheng/noop';
+import noop from '@jswork/noop';
 import objectAssign from 'object-assign';
 import { SketchPicker, PhotoshopPicker } from 'react-color';
 
 const CLASS_NAME = 'react-color-picker';
 
-export default class extends Component {
+export default class ReactColorPicker extends Component {
   static displayName = CLASS_NAME;
+  static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
+    /**
+     * The changed value.
+     */
     value: PropTypes.string,
+    /**
+     * The change handler.
+     */
     onChange: PropTypes.func
   };
 
@@ -20,7 +30,7 @@ export default class extends Component {
     onChange: noop
   };
 
-  onChange = (inEvent) => {
+  handleChange = (inEvent) => {
     const { onChange } = this.props;
     const target = inEvent;
     const { r, g, b, a } = inEvent.rgb;
@@ -35,9 +45,9 @@ export default class extends Component {
         data-component={CLASS_NAME}
         className={classNames(CLASS_NAME, className)}>
         <SketchPicker
-          {...props}
           color={value}
-          onChangeComplete={this.onChange}
+          onChangeComplete={this.handleChange}
+          {...props}
         />
       </div>
     );

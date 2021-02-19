@@ -12,12 +12,7 @@ npm install -S @jswork/react-color-picker
 ```
 
 ## properties
-| Name      | Type   | Required | Default | Description                           |
-| --------- | ------ | -------- | ------- | ------------------------------------- |
-| className | string | false    | -       | The extended className for component. |
-| value     | string | false    | -       | The changed value.                    |
-| onChange  | func   | false    | noop    | The change handler.                   |
-
+__GENERATE_DOCS__
 
 ## usage
 1. import css
@@ -32,38 +27,7 @@ npm install -S @jswork/react-color-picker
   ```
 2. import js
   ```js
-  import ReactDemokit from '@jswork/react-demokit';
-  import React from 'react';
-  import ReactDOM from 'react-dom';
-  import ReactColorPicker from '@jswork/react-color-picker';
-  import './assets/style.scss';
-
-  class App extends React.Component {
-    state = {
-      value: '#ff6600'
-    };
-
-    onChange = (inEvent) => {
-      const { value } = inEvent.target;
-      this.setState({ value });
-    };
-
-    render() {
-      const { value } = this.state;
-      return (
-        <ReactDemokit
-          className="p-3 app-container"
-          url="https://github.com/afeiship/react-color-picker"
-          style={{ background: value }}>
-          <ReactColorPicker value={value} onChange={this.onChange} />
-          <div className="is-label">{value}</div>
-        </ReactDemokit>
-      );
-    }
-  }
-
-  ReactDOM.render(<App />, document.getElementById('app'));
-
+__GENERATE_DAPP__
   ```
 
 ## documentation

@@ -1,5 +1,10 @@
 $react-color-picker-options: () !default;
 
 .react-color-picker {
-  display: inline-block;
+  // your styles
+  color: red;
+  font-size: 12px;
+  &:active {
+    color: black;
+  }
 }
